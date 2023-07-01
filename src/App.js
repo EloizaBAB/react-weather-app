@@ -6,7 +6,11 @@ function App() {
       <header className="App-header">
         <h1> Weather App by Eloiza B.</h1>
         <Weather />
-        <a href="https://github.com/EloizaBAB/react-weather-app">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://github.com/EloizaBAB/react-weather-app"
+        >
           Open Source here
         </a>
       </header>
