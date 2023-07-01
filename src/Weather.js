@@ -48,7 +48,7 @@ export default function Weather() {
           <li>Humidity: {weatherobj.humidity}% </li>
           <li>
             {" "}
-            <img src={weatherobj.icon} />
+            <img alt="weather icon" src={weatherobj.icon} />
           </li>
         </ul>
       </div>
