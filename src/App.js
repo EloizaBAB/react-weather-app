@@ -3,10 +3,19 @@ import Weather from "./Weather";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1> Weather App by Eloiza B.</h1>
+      <div className="container-weather">
+        <h1> City</h1>
+        <h2>date</h2>
         <Weather />
-      </header>
+      </div>
+      <div className="container-forecast">
+        <div className="forecast-grid">
+          <div>da1</div>
+          <div>day2</div>
+          <div>day3</div>
+          <div>da4</div>
+        </div>
+      </div>
       <footer>
         <a
           target="_blank"
