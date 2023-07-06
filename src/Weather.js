@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import "./Weather.css";
 import axios from "axios";
 export default function Weather() {
   const [city, setCity] = useState(" ");
   const [result, setResult] = useState(false);
   const [weatherobj, setWeatherobj] = useState({});
   function displayWeather(response) {
-    console.log(response.data);
     setResult(true);
     setWeatherobj({
       temperature: response.data.main.temp,
@@ -17,11 +17,11 @@ export default function Weather() {
   }
   function handleSubmit(event) {
     event.preventDefault();
-    let apiKey = "be81f193e065bf5feb2d944c7336968b";
+    const apiKey = "be81f193e065bf5feb2d944c7336968b";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
 
-    // this function gives access to the city
+    // this function gives access to the citys
     //make an api call and update the weather UI
   }
   function updateCity(event) {
@@ -42,14 +42,15 @@ export default function Weather() {
       <div>
         {form}
         <ul>
-          <li>{Math.round(weatherobj.temperature)}ºC</li>
+          <li className="temperature">
+            <span>
+              {Math.round(weatherobj.temperature)}ºC
+              <img alt="weather icon" src={weatherobj.icon} />
+            </span>
+          </li>
           <li>Description: {weatherobj.description}</li>
           <li>Wind: {weatherobj.wind} km</li>
           <li>Humidity: {weatherobj.humidity}% </li>
-          <li>
-            {" "}
-            <img alt="weather icon" src={weatherobj.icon} />
-          </li>
         </ul>
       </div>
     );

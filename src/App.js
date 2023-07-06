@@ -1,5 +1,6 @@
 import "./App.css";
 import Weather from "./Weather";
+import "./Weather.css";
 function App() {
   return (
     <div className="App">
@@ -14,17 +15,10 @@ function App() {
           <div>day2</div>
           <div>day3</div>
           <div>da4</div>
+          <div>da4</div>
+          <div>da4</div>
         </div>
       </div>
-      <footer>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://github.com/EloizaBAB/react-weather-app"
-        >
-          Open Source here
-        </a>
-      </footer>
     </div>
   );
 }
