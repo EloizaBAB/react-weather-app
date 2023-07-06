@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-export default function Weather() {
+export default function Weather(properties) {
   const [city, setCity] = useState(" ");
   const [result, setResult] = useState(false);
   const [weatherobj, setWeatherobj] = useState({});
@@ -9,6 +9,7 @@ export default function Weather() {
     setResult(true);
     setWeatherobj({
       temperature: response.data.main.temp,
+      date: "fake data",
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,

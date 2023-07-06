@@ -7,7 +7,7 @@ function App() {
       <div className="container-weather">
         <h1> City</h1>
         <h2>date</h2>
-        <Weather />
+        <Weather defaultcity="Search for a city" />
       </div>
       <div className="container-forecast">
         <div className="forecast-grid">
