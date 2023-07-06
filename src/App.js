@@ -6,6 +6,8 @@ function App() {
       <header className="App-header">
         <h1> Weather App by Eloiza B.</h1>
         <Weather />
+      </header>
+      <footer>
         <a
           target="_blank"
           rel="noreferrer"
@@ -13,7 +15,7 @@ function App() {
         >
           Open Source here
         </a>
-      </header>
+      </footer>
     </div>
   );
 }
