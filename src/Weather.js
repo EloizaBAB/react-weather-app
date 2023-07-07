@@ -34,7 +34,7 @@ export default function Weather(properties) {
     <form onSubmit={handleSubmit}>
       <input
         type="search"
-        placeholder="Search for a city"
+        placeholder="Type here"
         onChange={updateCity}
       ></input>
       <button type="submit">Search</button>
@@ -44,7 +44,7 @@ export default function Weather(properties) {
     return (
       <div>
         {form}
-        <h1>{city}</h1>
+        <h1>{city} </h1>
         {/* to display the date in an easy way i had to create a new component with the formatted date and then send properties to it, the properties
          come from the weather object date info */}
 
@@ -56,7 +56,7 @@ export default function Weather(properties) {
               <img alt="weather icon" src={weatherobj.icon} />
             </span>
           </li>
-          <li>Description: {weatherobj.description}</li>
+          <li> {weatherobj.description}</li>
           <li>Wind: {weatherobj.wind} km</li>
           <li>Humidity: {weatherobj.humidity}% </li>
         </ul>
