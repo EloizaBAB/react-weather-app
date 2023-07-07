@@ -10,18 +10,18 @@ export default function Weather(properties) {
   function displayWeather(response) {
     setResult(true);
     setWeatherobj({
-      temperature: response.main.temp,
-      date: new Date(response.dt * 1000),
-      wind: response.wind.speed,
-      description: response.weather[0].description,
-      humidity: response.main.humidity,
-      icon: `https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`,
+      temperature: response.data.main.temp,
+      date: new Date(response.data.dt * 1000),
+      wind: response.data.wind.speed,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
   function handleSubmit(event) {
     event.preventDefault();
     const apiKey = "be81f193e065bf5feb2d944c7336968b";
-    let apiUrl = `https://api.openweathermap.org/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
 
     // this function gives access to the citys

@@ -11,7 +11,7 @@ export default function FormattedDate(properties) {
     "Saturday",
   ];
   let day = days[properties.date.getDay()];
-  let hours = properties.date.getHour();
+  let hours = properties.date.getHours();
   let minutes = properties.date.getMinutes();
   if (hours < 10) {
     hours = `0${hours}`;
