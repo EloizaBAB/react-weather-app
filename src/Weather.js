@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
+
 export default function Weather(properties) {
   const [city, setCity] = useState(" ");
   const [result, setResult] = useState(false);
@@ -8,18 +10,18 @@ export default function Weather(properties) {
   function displayWeather(response) {
     setResult(true);
     setWeatherobj({
-      temperature: response.data.main.temp,
-      date: "fake data",
-      wind: response.data.wind.speed,
-      description: response.data.weather[0].description,
-      humidity: response.data.main.humidity,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      temperature: response.main.temp,
+      date: new Date(response.dt * 1000),
+      wind: response.wind.speed,
+      description: response.weather[0].description,
+      humidity: response.main.humidity,
+      icon: `https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`,
     });
   }
   function handleSubmit(event) {
     event.preventDefault();
     const apiKey = "be81f193e065bf5feb2d944c7336968b";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
 
     // this function gives access to the citys
@@ -42,6 +44,11 @@ export default function Weather(properties) {
     return (
       <div>
         {form}
+        <h1>{city}</h1>
+        {/* to display the date in an easy way i had to create a new component with the formatted date and then send properties to it, the properties
+         come from the weather object date info */}
+
+        <FormattedDate date={weatherobj.date} />
         <ul>
           <li className="temperature">
             <span>
