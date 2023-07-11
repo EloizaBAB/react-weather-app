@@ -46,22 +46,24 @@ export default function Weather(properties) {
     return (
       <div>
         {form}
-        <Weatherinfo info={weatherobj} />
         <h1>{city} </h1>
+
+        <Weatherinfo info={weatherobj} />
+
         {/* to display the date in an easy way i had to create a new component with the formatted date and then send properties to it, the properties
          come from the weather object date info */}
 
-        <FormattedDate date={weatherobj.date} />
+        <FormattedDate date={weatherobj.data.date} />
         <ul>
           <li className="temperature">
             <span>
-              {Math.round(weatherobj.temperature)}ºC
-              <img alt="weather icon" src={weatherobj.icon} />
+              {Math.round(weatherobj.data.temperature)}ºC
+              <img alt="weather icon" src={weatherobj.data.icon} />
             </span>
           </li>
-          <li> {weatherobj.description}</li>
-          <li>Wind: {weatherobj.wind} km</li>
-          <li>Humidity: {weatherobj.humidity}% </li>
+          <li> {weatherobj.data.description}</li>
+          <li>Wind: {weatherobj.data.wind} km</li>
+          <li>Humidity: {weatherobj.data.humidity}% </li>
         </ul>
       </div>
     );

@@ -1,21 +1,20 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
-import Weather from "./Weather";
 
 export default function Weatherinfo(properties) {
   return (
-    <div>
-      <FormattedDate date={properties.data.date} />
+    <div className="Weatherinfo">
+      <FormattedDate date={properties.info.date} />
       <ul>
         <li className="temperature">
           <span>
-            {Math.round(properties.data.temperature)}ºC
-            <img alt="weather icon" src={properties.data.icon} />
+            {Math.round(properties.info.temperature)}ºC
+            <img alt="weather icon" src={properties.info.icon} />
           </span>
         </li>
-        <li> {properties.data.description}</li>
-        <li>Wind: {properties.data.wind} km</li>
-        <li>Humidity: {properties.data.humidity}% </li>
+        <li> {properties.info.description}</li>
+        <li>Wind: {properties.info.wind} km</li>
+        <li>Humidity: {properties.info.humidity}% </li>
       </ul>
     </div>
   );

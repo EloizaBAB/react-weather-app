@@ -7,7 +7,6 @@ function App() {
     <div className="App">
       <div className="container-weather">
         <h1>Search for a city</h1>
-
         <Weather />
       </div>
       <div className="container-forecast">
