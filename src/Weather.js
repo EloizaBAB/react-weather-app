@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
+import Weatherinfo from "./Weatherinfo";
 import axios from "axios";
 
 export default function Weather(properties) {
@@ -40,10 +41,12 @@ export default function Weather(properties) {
       <button type="submit">Search</button>
     </form>
   );
+
   if (result === true) {
     return (
       <div>
         {form}
+        <Weatherinfo info={weatherobj} />
         <h1>{city} </h1>
         {/* to display the date in an easy way i had to create a new component with the formatted date and then send properties to it, the properties
          come from the weather object date info */}
