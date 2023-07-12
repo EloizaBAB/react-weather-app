@@ -32,3 +32,16 @@ button {
   text-align: center;
   letter-spacing: 1px;
 }
+ul.child {
+  display: inline-block;
+}
+.description,
+.wind,
+.humidity {
+  color: whitesmoke;
+  font-size: 30px;
+  padding: 10px;
+}
+.description {
+  text-transform: uppercase;
+}
