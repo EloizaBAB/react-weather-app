@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Weather.css";
-import FormattedDate from "./FormattedDate";
+
 import Weatherinfo from "./Weatherinfo";
 import axios from "axios";
 
@@ -49,22 +49,6 @@ export default function Weather(properties) {
         <h1>{city} </h1>
 
         <Weatherinfo info={weatherobj} />
-
-        {/* to display the date in an easy way i had to create a new component with the formatted date and then send properties to it, the properties
-         come from the weather object date info */}
-
-        <FormattedDate date={weatherobj.data.date} />
-        <ul>
-          <li className="temperature">
-            <span>
-              {Math.round(weatherobj.data.temperature)}ºC
-              <img alt="weather icon" src={weatherobj.data.icon} />
-            </span>
-          </li>
-          <li> {weatherobj.data.description}</li>
-          <li>Wind: {weatherobj.data.wind} km</li>
-          <li>Humidity: {weatherobj.data.humidity}% </li>
-        </ul>
       </div>
     );
   } else {
