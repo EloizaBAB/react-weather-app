@@ -1,5 +1,6 @@
 import React from "react";
 import ReactAnimatedWeather from "react-animated-weather";
+import "./Weather.css";
 
 export default function Weathericon(properties) {
   //The api call gets different codes for each icon,to fix this we need to create a constant to map each of the them using the api call
@@ -26,9 +27,10 @@ export default function Weathericon(properties) {
   return (
     <ReactAnimatedWeather
       icon={codemapping[properties.code]}
-      color="#303134"
-      size="30"
+      color="whitesmoke"
+      size="40"
       animate="true"
+      className="icon"
     />
   );
 }

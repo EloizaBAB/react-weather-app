@@ -3,4 +3,32 @@ li {
 }
 .temperature {
   font-size: 75px;
+  color: whitesmoke;
+}
+.celsius,
+.fahrenheit {
+  font-size: 30px;
+}
+a {
+  text-decoration: none;
+}
+form {
+  margin-left: 50px;
+  padding-top: 30px;
+}
+form input,
+button {
+  font-size: 20px;
+}
+.city {
+  color: whitesmoke;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 30px;
+}
+.date {
+  color: whitesmoke;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 1px;
 }

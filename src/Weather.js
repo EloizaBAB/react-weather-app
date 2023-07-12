@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Weather.css";
-
 import Weatherinfo from "./Weatherinfo";
 import axios from "axios";
 
@@ -16,7 +15,7 @@ export default function Weather(properties) {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
   }
   function handleSubmit(event) {
@@ -46,7 +45,7 @@ export default function Weather(properties) {
     return (
       <div>
         {form}
-        <h1>{city} </h1>
+        <h1 className="city">{city} </h1>
 
         <Weatherinfo info={weatherobj} />
       </div>
