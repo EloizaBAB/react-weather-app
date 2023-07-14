@@ -54,3 +54,6 @@ ul.child {
   justify-items: center;
   grid-column-gap: 200px;
 }
+.forecast-temperatures {
+  display: inline-block;
+}
