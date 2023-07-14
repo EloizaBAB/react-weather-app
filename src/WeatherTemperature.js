@@ -13,7 +13,7 @@ export default function WeatherTemperature(properties) {
   }
   if (unit === "celsius") {
     return (
-      <div>
+      <span>
         <span className="temperature">{Math.round(properties.celsius)}</span>
         <span className="celsius">°C | </span>
         <span>
@@ -21,12 +21,12 @@ export default function WeatherTemperature(properties) {
             F°
           </a>
         </span>
-      </div>
+      </span>
     );
   } else {
     let fahrenheit = (properties.celsius * 9) / 5 + 32;
     return (
-      <div>
+      <span>
         <span>{Math.round(fahrenheit)}</span>
         <span>
           {" "}
@@ -35,7 +35,7 @@ export default function WeatherTemperature(properties) {
           </a>
         </span>
         <span className="fahrenheit">F°</span>
-      </div>
+      </span>
     );
   }
 }
