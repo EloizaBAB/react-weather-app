@@ -1,5 +1,5 @@
 import "./App.css";
-
+import WeatherForecast from "./WeatherForecast";
 import Weather from "./Weather";
 import "./Weather.css";
 function App() {
@@ -11,12 +11,7 @@ function App() {
       </div>
       <div className="container-forecast">
         <div className="forecast-grid">
-          <div>da1</div>
-          <div>day2</div>
-          <div>day3</div>
-          <div>da4</div>
-          <div>da4</div>
-          <div>da4</div>
+          <WeatherForecast />
         </div>
       </div>
     </div>

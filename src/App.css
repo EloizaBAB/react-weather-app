@@ -10,15 +10,6 @@
   opacity: 0.8;
 }
 
-.forecast-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-row-gap: 100px;
-  justify-content: center;
-  justify-items: center;
-  grid-column-gap: 200px;
-}
 body {
   background-color: whitesmoke;
 }
